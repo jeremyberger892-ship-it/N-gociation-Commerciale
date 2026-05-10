@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Négociation Commerciale – Formation Certifiante · Jérémy BERGER</title>
+  <meta name="description" content="Formation certifiante Négociation Commerciale animée par Jérémy BERGER. 2 jours 14h, présentiel Champs-Élysées Paris & Microsoft Teams. Session : 04/04/2026." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #0B1929; --navy-mid: #132238; --navy-lt: #1C3255;
+      --blue: #1E5FA8; --gold: #C9A84C; --gold-lt: #E8CB7A;
+      --cream: #FAF8F3; --white: #FFFFFF;
+      --g100: #F0EDE6; --g300: #C8C2B8; --g500: #7A746C; --g700: #3C3830;
+      --r-md: 12px; --r-lg: 20px; --r-xl: 28px;
+      --sh: 0 4px 28px rgba(11,25,41,.13); --sh-lg: 0 12px 48px rgba(11,25,41,.2);
+    }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body { font-family: 'Outfit', sans-serif; color: var(--g700); background: var(--cream); line-height: 1.7; }
+    img { max-width: 100%; display: block; }
+
+    .skip { position: absolute; top: -60px; left: 1rem; z-index: 9999;
+      background: var(--gold); color: var(--navy); font-weight: 700;
+      padding: .6rem 1.2rem; border-radius: 0 0 var(--r-md) var(--r-md); transition: top .2s; }
+    .skip:focus { top: 0; }
+
+    /* HEADER */
+    header { background: var(--navy); position: relative; overflow: hidden; }
+    .hdr-img { position: absolute; inset: 0; width: 100%; height: 100%;
+      object-fit: cover; object-position: center 30%; opacity: .35; mix-blend-mode: luminosity; }
+    .hdr-grad { position: absolute; inset: 0;
+      background: linear-gradient(160deg, rgba(11,25,41,.55) 0%, rgba(11,25,41,.72) 45%, rgba(11,25,41,.97) 100%); }
+    .hdr-line { position: absolute; bottom: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, transparent 0%, var(--gold) 40%, var(--gold-lt) 60%, transparent 100%); }
+    .hdr-deco { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+    .hdr-deco::before { content: ''; position: absolute; top: -140px; right: -100px;
+      width: 520px; height: 520px; border-radius: 50%; border: 55px solid rgba(201,168,76,.05); }
+    .hdr-deco::after { content: ''; position: absolute; top: 40px; right: 100px;
+      width: 300px; height: 300px; border-radius: 50%; border: 28px solid rgba(201,168,76,.04); }
+    .hdr-wrap { position: relative; z-index: 2; max-width: 1000px; margin: 0 auto;
+      padding: 3rem 2.5rem 3.5rem; display: grid; grid-template-columns: 1fr auto; gap: 2.5rem; align-items: center; }
+    .hdr-logo { margin-bottom: 1.6rem; }
+    .hdr-logo img { height: 64px; width: auto; filter: brightness(0) invert(1); opacity: .92; }
+    .hdr-title { font-family: 'Playfair Display', serif; font-size: clamp(2.2rem, 5.5vw, 3.6rem);
+      font-weight: 900; color: var(--white); line-height: 1.08; letter-spacing: -.02em; margin-bottom: .7rem; }
+    .hdr-title em { font-style: normal; display: block; color: var(--gold); }
+    .hdr-tag { font-size: 1.05rem; font-weight: 300; color: rgba(255,255,255,.72); max-width: 500px; margin-bottom: 1.8rem; }
+    .hdr-quote { border-left: 3px solid var(--gold); padding: .65rem 0 .65rem 1.2rem; margin-bottom: 2rem; max-width: 460px; }
+    .hdr-quote p { font-family: 'Playfair Display', serif; font-style: italic;
+      font-size: .95rem; color: rgba(255,255,255,.78); line-height: 1.5; }
+    .hdr-quote cite { font-style: normal; font-size: .75rem; color: var(--gold); font-weight: 600; letter-spacing: .05em; }
+    .hdr-session { display: inline-flex; flex-wrap: wrap; background: rgba(255,255,255,.07);
+      border: 1px solid rgba(201,168,76,.28); border-radius: var(--r-xl);
+      backdrop-filter: blur(10px); overflow: hidden; margin-bottom: 2rem; }
+    .sess { display: flex; align-items: center; gap: .75rem; padding: 1rem 1.4rem;
+      border-right: 1px solid rgba(201,168,76,.18); }
+    .sess:last-child { border-right: none; }
+    .sess-ico { width: 34px; height: 34px; flex-shrink: 0; background: rgba(201,168,76,.15);
+      border-radius: 8px; display: flex; align-items: center; justify-content: center; }
+    .sess-ico svg { width: 17px; height: 17px; stroke: var(--gold); fill: none; }
+    .sess strong { display: block; font-size: .88rem; font-weight: 600; color: var(--white); }
+    .sess span { font-size: .72rem; color: rgba(255,255,255,.48); }
+    .hdr-ctas { display: flex; gap: .8rem; flex-wrap: wrap; }
+    .btn-gold { display: inline-flex; align-items: center; gap: .55rem;
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-lt) 100%);
+      color: var(--navy); font-weight: 700; font-size: .92rem; padding: .9rem 1.8rem;
+      border-radius: var(--r-md); text-decoration: none;
+      box-shadow: 0 4px 20px rgba(201,168,76,.3); transition: transform .2s, box-shadow .2s; }
+    .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(201,168,76,.45); }
+    .btn-ghost { display: inline-flex; align-items: center; gap: .55rem;
+      background: transparent; color: var(--white); font-weight: 500; font-size: .92rem;
+      padding: .9rem 1.6rem; border-radius: var(--r-md); text-decoration: none;
+      border: 1.5px solid rgba(255,255,255,.25); transition: background .2s, border-color .2s; }
+    .btn-ghost:hover { background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.5); }
+    .btn-gold svg, .btn-ghost svg { width: 16px; height: 16px; stroke: currentColor; fill: none; flex-shrink: 0; }
+    .hdr-photo-wrap { position: relative; flex-shrink: 0; }
+    .hdr-photo { width: 200px; height: 200px; border-radius: 50%;
+      object-fit: cover; object-position: top center;
+      border: 4px solid rgba(201,168,76,.5); box-shadow: 0 0 0 8px rgba(201,168,76,.1); }
+    .hdr-photo-badge { position: absolute; bottom: 8px; right: 0;
+      background: var(--gold); color: var(--navy);
+      font-size: .65rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+      padding: .3rem .8rem; border-radius: 100px; box-shadow: var(--sh); white-space: nowrap; }
+
+    /* NAV */
+    .snav { background: var(--navy-mid); border-bottom: 1px solid rgba(201,168,76,.22);
+      position: sticky; top: 0; z-index: 200; }
+    .snav ul { max-width: 1000px; margin: 0 auto; padding: 0 2.5rem;
+      display: flex; list-style: none; overflow-x: auto; scrollbar-width: none; }
+    .snav ul::-webkit-scrollbar { display: none; }
+    .snav a { display: block; padding: .9rem 1.1rem; font-size: .8rem; font-weight: 500;
+      letter-spacing: .04em; text-transform: uppercase; color: rgba(255,255,255,.5);
+      text-decoration: none; border-bottom: 2px solid transparent; white-space: nowrap;
+      transition: color .2s, border-color .2s; }
+    .snav a:hover, .snav a.act { color: var(--gold-lt); border-bottom-color: var(--gold); }
+
+    /* SECTIONS */
+    .sec { padding: 5rem 2.5rem; }
+    .sec-alt { background: var(--white); }
+    .wrap { max-width: 1000px; margin: 0 auto; }
+    .lbl { display: inline-flex; align-items: center; gap: .55rem; font-size: .72rem; font-weight: 700;
+      letter-spacing: .12em; text-transform: uppercase; color: var(--gold); margin-bottom: .55rem; }
+    .lbl::before { content: ''; width: 18px; height: 2px; background: var(--gold); border-radius: 2px; }
+    h2.ttl { font-family: 'Playfair Display', serif; font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+      font-weight: 700; color: var(--navy); line-height: 1.2; margin-bottom: .5rem; }
+    .sub { font-size: .97rem; color: var(--g500); max-width: 580px; margin-bottom: 2.8rem; }
+
+    /* APERÇU INFOGRAPHIE */
+    #apercu { background: var(--cream); }
+    .infog-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; align-items: center; }
+    .infog-img { border-radius: var(--r-xl); box-shadow: var(--sh-lg); overflow: hidden; }
+    .infog-img img { width: 100%; display: block; }
+    .infog-text h3 { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700;
+      color: var(--navy); margin-bottom: .8rem; }
+    .infog-text p { font-size: .93rem; color: var(--g500); line-height: 1.7; margin-bottom: 1.4rem; }
+    .pill-list { display: flex; flex-wrap: wrap; gap: .5rem; }
+    .pill { display: inline-flex; align-items: center; gap: .4rem; background: var(--navy);
+      color: var(--gold-lt); font-size: .75rem; font-weight: 600; padding: .35rem .9rem;
+      border-radius: 100px; letter-spacing: .04em; }
+    .pill svg { width: 13px; height: 13px; stroke: var(--gold); fill: none; }
+
+    /* OBJECTIFS */
+    .obj-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.2rem; }
+    .obj-card { background: var(--cream); border: 1px solid var(--g100); border-radius: var(--r-lg);
+      padding: 1.6rem 1.4rem; position: relative; overflow: hidden; transition: transform .2s, box-shadow .2s; }
+    .obj-card:hover { transform: translateY(-4px); box-shadow: var(--sh); }
+    .obj-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, var(--gold), var(--gold-lt)); }
+    .obj-n { font-family: 'Playfair Display', serif; font-size: 2.2rem; font-weight: 900;
+      color: var(--g100); line-height: 1; margin-bottom: .6rem; }
+    .obj-card h3 { font-size: .95rem; font-weight: 600; color: var(--navy); margin-bottom: .4rem; }
+    .obj-card p { font-size: .83rem; color: var(--g500); line-height: 1.55; }
+
+    /* ACCORDÉON */
+    .acc { list-style: none; display: flex; flex-direction: column; gap: .75rem; }
+    .ai { border: 1.5px solid var(--g100); border-radius: var(--r-lg); background: var(--cream);
+      overflow: hidden; transition: border-color .2s, box-shadow .2s; }
+    .ai:hover { border-color: rgba(201,168,76,.35); box-shadow: var(--sh); }
+    .ab { width: 100%; background: none; border: none; cursor: pointer;
+      display: flex; align-items: center; gap: .9rem; padding: 1.2rem 1.4rem; text-align: left; }
+    .an { flex-shrink: 0; width: 38px; height: 38px; background: var(--navy); border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Playfair Display', serif; font-size: .85rem; font-weight: 700; color: var(--gold);
+      transition: background .2s; }
+    .ab[aria-expanded="true"] .an { background: var(--gold); color: var(--navy); }
+    .ai-inf { flex: 1; }
+    .ai-ttl { font-size: .95rem; font-weight: 600; color: var(--navy); display: block; }
+    .ai-sub { font-size: .77rem; color: var(--g500); margin-top: 2px; }
+    .ai-dur { font-size: .72rem; font-weight: 700; background: var(--navy); color: var(--gold-lt);
+      padding: .3rem .85rem; border-radius: 100px; white-space: nowrap; flex-shrink: 0; letter-spacing: .04em; }
+    .achev { width: 19px; height: 19px; stroke: var(--g300); fill: none; flex-shrink: 0;
+      transition: transform .3s, stroke .2s; }
+    .ab[aria-expanded="true"] .achev { transform: rotate(180deg); stroke: var(--gold); }
+    .ap { max-height: 0; overflow: hidden; transition: max-height .4s cubic-bezier(.4,0,.2,1); }
+    .ap.open { max-height: 600px; }
+    .ap-in { padding: 0 1.4rem 1.5rem 4.2rem; }
+    .ap-in ul { list-style: none; }
+    .ap-in li { display: flex; align-items: flex-start; gap: .65rem; font-size: .88rem; color: var(--g700);
+      padding: .5rem 0; border-bottom: 1px dashed var(--g100); }
+    .ap-in li:last-child { border-bottom: none; }
+    .ap-in li::before { content: ''; flex-shrink: 0; width: 5px; height: 5px; border-radius: 50%;
+      background: var(--gold); margin-top: 9px; }
+
+    /* INFOS */
+    .infos-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; align-items: start; }
+    .iblk { background: var(--cream); border: 1px solid var(--g100); border-radius: var(--r-lg);
+      overflow: hidden; box-shadow: var(--sh); }
+    .iblk-hd { background: var(--navy); padding: 1rem 1.4rem; display: flex; align-items: center; gap: .75rem; }
+    .iblk-hd svg { width: 19px; height: 19px; stroke: var(--gold); fill: none; flex-shrink: 0; }
+    .iblk-hd h3 { font-family: 'Playfair Display', serif; font-size: .92rem; font-weight: 700; color: var(--white); }
+    .iblk-bd { padding: 1rem 1.4rem; }
+    .irow { display: flex; justify-content: space-between; align-items: center;
+      padding: .55rem 0; border-bottom: 1px solid var(--g100); font-size: .86rem; gap: .75rem; }
+    .irow:last-child { border-bottom: none; }
+    .irow dt { color: var(--g500); flex-shrink: 0; }
+    .irow dd { color: var(--navy); font-weight: 600; text-align: right; }
+    .badge { display: inline-flex; align-items: center; gap: .35rem; border-radius: 100px;
+      padding: .3rem .85rem; font-size: .72rem; font-weight: 700; margin-bottom: .5rem; }
+    .badge::before { content: '✓'; font-weight: 800; }
+    .badge-g { background: #EAF7EF; color: #1A7A43; }
+    .badge-b { background: #EAF4FF; color: #0C4A8A; }
+
+    /* CARTE */
+    #carte { background: var(--cream); }
+    .map-box { border-radius: var(--r-xl); overflow: hidden; border: 1px solid var(--g100); box-shadow: var(--sh-lg); }
+    .map-box iframe { display: block; width: 100%; height: 380px; border: none; }
+    .map-bar { background: var(--navy); padding: .9rem 1.4rem; display: flex; align-items: center; gap: .75rem; }
+    .map-bar svg { width: 18px; height: 18px; stroke: var(--gold); fill: none; flex-shrink: 0; }
+    .map-bar span { color: var(--white); font-size: .88rem; font-weight: 500; }
+    .map-bar small { color: rgba(255,255,255,.45); font-size: .75rem; display: block; }
+
+    /* DOCS */
+    .dl-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.2rem; }
+    .dl-card { background: var(--white); border: 1.5px solid var(--g100); border-radius: var(--r-lg);
+      padding: 1.6rem 1.4rem; display: flex; flex-direction: column; gap: 1rem;
+      transition: border-color .2s, box-shadow .2s; }
+    .dl-card:hover { border-color: var(--gold); box-shadow: var(--sh); }
+    .dl-ico { width: 48px; height: 48px; background: var(--navy); border-radius: var(--r-md);
+      display: flex; align-items: center; justify-content: center; }
+    .dl-ico svg { width: 22px; height: 22px; stroke: var(--gold); fill: none; }
+    .dl-card h3 { font-size: .95rem; font-weight: 600; color: var(--navy); }
+    .dl-card p { font-size: .82rem; color: var(--g500); flex: 1; line-height: 1.55; }
+    .dl-btn { display: inline-flex; align-items: center; gap: .5rem;
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-lt) 100%);
+      color: var(--navy); font-weight: 700; font-size: .82rem; padding: .7rem 1.3rem;
+      border-radius: var(--r-md); text-decoration: none; width: fit-content;
+      transition: transform .2s, box-shadow .2s; }
+    .dl-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(201,168,76,.35); }
+    .dl-btn svg { width: 14px; height: 14px; stroke: currentColor; fill: none; }
+
+    /* FORMATEUR */
+    #formateur { background: var(--cream); }
+    .fmt-grid { display: grid; grid-template-columns: auto 1fr; gap: 2.5rem; align-items: center;
+      background: var(--navy); border-radius: var(--r-xl); padding: 2.8rem;
+      position: relative; overflow: hidden; }
+    .fmt-grid::after { content: ''; position: absolute; right: -70px; bottom: -70px;
+      width: 260px; height: 260px; border-radius: 50%; border: 45px solid rgba(201,168,76,.07); }
+    .fmt-photo { width: 130px; height: 130px; border-radius: 50%;
+      object-fit: cover; object-position: top center;
+      border: 3px solid rgba(201,168,76,.45); box-shadow: 0 0 0 6px rgba(201,168,76,.1);
+      flex-shrink: 0; position: relative; z-index: 1; }
+    .fmt-info { position: relative; z-index: 1; }
+    .fmt-info h3 { font-family: 'Playfair Display', serif; font-size: 1.45rem; font-weight: 700;
+      color: var(--white); margin-bottom: .25rem; }
+    .fmt-role { color: var(--gold-lt); font-size: .82rem; font-weight: 600;
+      letter-spacing: .05em; margin-bottom: 1.1rem; }
+    .fmt-contacts { display: flex; flex-wrap: wrap; gap: .65rem; }
+    .cpill { display: inline-flex; align-items: center; gap: .5rem;
+      background: rgba(255,255,255,.09); border: 1px solid rgba(255,255,255,.14);
+      border-radius: 100px; padding: .55rem 1.1rem; font-size: .82rem;
+      color: rgba(255,255,255,.82); text-decoration: none; transition: background .2s, border-color .2s; }
+    .cpill:hover { background: rgba(255,255,255,.16); border-color: var(--gold); color: var(--white); }
+    .cpill svg { width: 14px; height: 14px; stroke: var(--gold); fill: none; flex-shrink: 0; }
+
+    /* FOOTER */
+    footer { background: #060D18; padding: 3rem 2.5rem 2rem; }
+    .ft-grid { max-width: 1000px; margin: 0 auto; display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr; gap: 2.5rem;
+      padding-bottom: 2rem; border-bottom: 1px solid rgba(255,255,255,.07); }
+    .ft-brand img { height: 48px; width: auto; filter: brightness(0) invert(1); opacity: .75; margin-bottom: 1rem; }
+    footer h4 { font-family: 'Playfair Display', serif; font-size: .88rem; font-weight: 700;
+      color: var(--gold-lt); margin-bottom: .9rem; }
+    footer p, footer address { font-size: .83rem; color: rgba(255,255,255,.5); line-height: 1.85; font-style: normal; }
+    footer a { color: rgba(255,255,255,.65); text-decoration: none; transition: color .2s; }
+    footer a:hover { color: var(--gold-lt); }
+    .ft-bot { max-width: 1000px; margin: 1.4rem auto 0;
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: .72rem; color: rgba(255,255,255,.27); flex-wrap: wrap; gap: .5rem; }
+
+    /* ANIMATIONS */
+    @media (prefers-reduced-motion: no-preference) {
+      .rv { opacity: 0; transform: translateY(22px); transition: opacity .65s ease, transform .65s ease; }
+      .rv.vis { opacity: 1; transform: none; }
+      .rv-d1 { transition-delay: .1s; }
+      .rv-d2 { transition-delay: .2s; }
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 750px) {
+      .sec { padding: 3.5rem 1.25rem; }
+      .hdr-wrap { grid-template-columns: 1fr; padding: 2rem 1.25rem 2.5rem; }
+      .hdr-photo-wrap { display: none; }
+      .snav ul { padding: 0 .75rem; }
+      .infog-wrap, .infos-grid { grid-template-columns: 1fr; }
+      .hdr-session { flex-direction: column; }
+      .sess { border-right: none; border-bottom: 1px solid rgba(201,168,76,.18); }
+      .sess:last-child { border-bottom: none; }
+      .fmt-grid { grid-template-columns: 1fr; text-align: center; }
+      .fmt-photo { margin: 0 auto; }
+      .fmt-contacts { justify-content: center; }
+      .ft-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+      .ap-in { padding-left: 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+<a class="skip" href="#programme">Aller au contenu principal</a>
+
+<!-- HEADER -->
+<header>
+  <img src="banniere.png" alt="" class="hdr-img" role="presentation" />
+  <div class="hdr-grad" aria-hidden="true"></div>
+  <div class="hdr-deco" aria-hidden="true"></div>
+  <div class="hdr-line" aria-hidden="true"></div>
+  <div class="hdr-wrap">
+    <div>
+      <div class="hdr-logo">
+        <img src="logo-jeremy-berger.png" alt="Jérémy BERGER – Organisme de formation" />
+      </div>
+      <h1 class="hdr-title">Négociation<em>Commerciale</em></h1>
+      <p class="hdr-tag">Maîtrisez l'art de négocier, défendez votre valeur et concluez avec méthode. Formation intensive 2 jours — Microsoft Teams &amp; Paris.</p>
+      <blockquote class="hdr-quote">
+        <p>« On n'obtient pas la valeur qu'on mérite, on obtient ce que l'on négocie. »</p>
+        <cite>— Chester L. Karrass</cite>
+      </blockquote>
+      <div class="hdr-session" aria-label="Informations clés de la session">
+        <div class="sess">
+          <div class="sess-ico" aria-hidden="true"><svg viewBox="0 0 24 24" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+          <div><strong>04 avril 2026</strong><span>Prochaine session</span></div>
+        </div>
+        <div class="sess">
+          <div class="sess-ico" aria-hidden="true"><svg viewBox="0 0 24 24" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+          <div><strong>9h – 17h · 14h de formation</strong><span>2 jours complets</span></div>
+        </div>
+        <div class="sess">
+          <div class="sess-ico" aria-hidden="true"><svg viewBox="0 0 24 24" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div><strong>Champs-Élysées, Paris</strong><span>Présentiel &amp; Microsoft Teams</span></div>
+        </div>
+      </div>
+      <div class="hdr-ctas">
+        <a href="#programme" class="btn-gold">
+          <svg viewBox="0 0 24 24" stroke-width="2" aria-hidden="true"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2"/></svg>
+          Voir le programme
+        </a>
+        <a href="#telechargements" class="btn-ghost">
+          <svg viewBox="0 0 24 24" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Télécharger les docs
+        </a>
+      </div>
+    </div>
+    <div class="hdr-photo-wrap" aria-hidden="true">
+      <img src="photo-formateur.jpg" alt="Jérémy BERGER, formateur" class="hdr-photo" />
+      <span class="hdr-photo-badge">Formateur certifié</span>
+    </div>
+  </div>
+</header>
+
+<!-- NAV -->
+<nav class="snav" aria-label="Navigation par sections">
+  <ul>
+    <li><a href="#apercu">Aperçu</a></li>
+    <li><a href="#objectifs">Objectifs</a></li>
+    <li><a href="#programme">Programme</a></li>
+    <li><a href="#infos">Infos</a></li>
+    <li><a href="#carte">Lieu</a></li>
+    <li><a href="#telechargements">Documents</a></li>
+    <li><a href="#formateur">Formateur</a></li>
+  </ul>
+</nav>
+
+<!-- APERÇU -->
+<section id="apercu" class="sec" aria-labelledby="h-apercu">
+  <div class="wrap">
+    <div class="infog-wrap">
+      <div class="infog-img rv" role="img" aria-label="Infographie de la formation Négociation Commerciale – Jérémy BERGER">
+        <img src="Gemini_Generated_Image_4uzshn4uzshn4uzs.png" alt="Présentation visuelle des 6 modules de la formation, session 04/04/2026 Paris" loading="lazy" />
+      </div>
+      <div class="infog-text rv rv-d1">
+        <h3>Une formation conçue pour les professionnels du terrain</h3>
+        <p>En 2 jours intensifs, vous passez des fondamentaux de la négociation à la maîtrise complète du closing. Chaque module alterne apports théoriques, études de cas et mises en situation filmées pour un ancrage durable.</p>
+        <div class="pill-list">
+          <span class="pill"><svg viewBox="0 0 24 24" stroke-width="2" aria-hidden="true"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>Formation certifiante</span>
+          <span class="pill"><svg viewBox="0 0 24 24" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>14h · 2 jours</span>
+          <span class="pill"><svg viewBox="0 0 24 24" stroke-width="2" aria-hidden="true"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>6–12 participants</span>
+          <span class="pill">Microsoft Teams</span>
+          <span class="pill">PMR &amp; DYS Friendly</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OBJECTIFS -->
+<section id="objectifs" class="sec sec-alt" aria-labelledby="h-obj">
+  <div class="wrap">
+    <p class="lbl">Ce que vous apprendrez</p>
+    <h2 class="ttl" id="h-obj">Objectifs pédagogiques</h2>
+    <p class="sub">À l'issue de la formation, vous conduirez une négociation commerciale de A à Z avec méthode et confiance.</p>
+    <div class="obj-grid">
+      <div class="obj-card rv"><div class="obj-n" aria-hidden="true">01</div><h3>Comprendre les fondamentaux</h3><p>Maîtriser les bases et mécanismes de la négociation commerciale.</p></div>
+      <div class="obj-card rv rv-d1"><div class="obj-n" aria-hidden="true">02</div><h3>Analyser besoins &amp; valeur</h3><p>Identifier les besoins réels et créer de la valeur pour toutes les parties.</p></div>
+      <div class="obj-card rv rv-d2"><div class="obj-n" aria-hidden="true">03</div><h3>Défendre son prix</h3><p>Maîtriser la défense de valeur et la négociation gagnant-gagnant.</p></div>
+      <div class="obj-card rv"><div class="obj-n" aria-hidden="true">04</div><h3>Gérer les objections</h3><p>Traiter les objections et désamorcer les situations difficiles.</p></div>
+      <div class="obj-card rv rv-d1"><div class="obj-n" aria-hidden="true">05</div><h3>Conduire au closing</h3><p>Utiliser les techniques éprouvées pour conclure efficacement.</p></div>
+      <div class="obj-card rv rv-d2"><div class="obj-n" aria-hidden="true">06</div><h3>Assurer le suivi</h3><p>Consolider les acquis contractuels pour un suivi déontologique.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAMME -->
+<section id="programme" class="sec" aria-labelledby="h-prog">
+  <div class="wrap">
+    <p class="lbl">Contenu détaillé</p>
+    <h2 class="ttl" id="h-prog">Programme de la formation</h2>
+    <p class="sub">6 modules progressifs · 2 jours · 14 heures · Présentiel Paris &amp; Microsoft Teams.</p>
+    <ul class="acc rv" role="list">
+      <li class="ai">
+        <button class="ab" aria-expanded="false" aria-controls="p1" id="b1">
+          <span class="an">01</span><span class="ai-inf"><span class="ai-ttl">Introduction &amp; Fondamentaux</span><span class="ai-sub">Les bases incontournables du négociateur</span></span>
+          <span class="ai-dur">Matinée J1</span><svg class="achev" viewBox="0 0 24 24" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="ap" id="p1" role="region" aria-labelledby="b1"><div class="ap-in"><ul>
+          <li>Comprendre les mécanismes et enjeux de la négociation commerciale</li>
+          <li>Identifier les différents styles de négociateurs et son propre profil</li>
+          <li>Les biais cognitifs qui influencent la prise de décision</li>
+          <li>Développer une posture assertive et orientée solution</li>
+          <li>Tour de table : attentes des participants et objectifs de la session</li>
+        </ul></div></div>
+      </li>
+      <li class="ai">
+        <button class="ab" aria-expanded="false" aria-controls="p2" id="b2">
+          <span class="an">02</span><span class="ai-inf"><span class="ai-ttl">Analyse des Besoins &amp; Création de Valeur</span><span class="ai-sub">Créer de la valeur pour toutes les parties</span></span>
+          <span class="ai-dur">Après-midi J1</span><svg class="achev" viewBox="0 0 24 24" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="ap" id="p2" role="region" aria-labelledby="b2"><div class="ap-in"><ul>
+          <li>Méthodes d'analyse des besoins explicites et implicites</li>
+          <li>Création de valeur pour les entités et partenaires</li>
+          <li>Définir ses objectifs et marges de manœuvre (BATNA / ZOPA)</li>
+          <li>Construire un argumentaire de valeur différenciant</li>
+          <li>Études de cas pratiques sur l'identification des leviers</li>
+        </ul></div></div>
+      </li>
+      <li class="ai">
+        <button class="ab" aria-expanded="false" aria-controls="p3" id="b3">
+          <span class="an">03</span><span class="ai-inf"><span class="ai-ttl">Défendre son Prix &amp; Négociation Gagnant-Gagnant</span><span class="ai-sub">Tenir sa position sans perdre la relation</span></span>
+          <span class="ai-dur">Matinée J2</span><svg class="achev" viewBox="0 0 24 24" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="ap" id="p3" role="region" aria-labelledby="b3"><div class="ap-in"><ul>
+          <li>Techniques de défense du prix sans concession inutile</li>
+          <li>La négociation raisonnée : principes Harvard</li>
+          <li>Construire un accord gagnant-gagnant durable</li>
+          <li>Gérer la pression et les tactiques d'intimidation</li>
+          <li>Jeux de rôle : simulation de négociation sur les prix</li>
+        </ul></div></div>
+      </li>
+      <li class="ai">
+        <button class="ab" aria-expanded="false" aria-controls="p4" id="b4">
+          <span class="an">04</span><span class="ai-inf"><span class="ai-ttl">Gérer les Objections &amp; Situations Difficiles</span><span class="ai-sub">Transformer les résistances en opportunités</span></span>
+          <span class="ai-dur">Après-midi J2</span><svg class="achev" viewBox="0 0 24 24" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="ap" id="p4" role="region" aria-labelledby="b4"><div class="ap-in"><ul>
+          <li>Identifier et qualifier les types d'objections (prix, délais, concurrence)</li>
+          <li>Méthodes CAB, SONCAS et techniques de rebond</li>
+          <li>Désamorcer les conflits et situations tendues</li>
+          <li>Savoir gérer un interlocuteur difficile ou bloquant</li>
+          <li>Mise en situation filmée avec débriefing individuel</li>
+        </ul></div></div>
+      </li>
+      <li class="ai">
+        <button class="ab" aria-expanded="false" aria-controls="p5" id="b5">
+          <span class="an">05</span><span class="ai-inf"><span class="ai-ttl">Conduire au Closing</span><span class="ai-sub">Conclure avec méthode et confiance</span></span>
+          <span class="ai-dur">J2 — fin</span><svg class="achev" viewBox="0 0 24 24" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="ap" id="p5" role="region" aria-labelledby="b5"><div class="ap-in"><ul>
+          <li>Reconnaître les signaux d'achat et le moment optimal pour conclure</li>
+          <li>Techniques de closing : alternative, ultimatum positif, résumé bénéfices</li>
+          <li>Formaliser l'accord et sécuriser l'engagement</li>
+          <li>Élaboration du plan d'action personnel (PAP)</li>
+        </ul></div></div>
+      </li>
+      <li class="ai">
+        <button class="ab" aria-expanded="false" aria-controls="p6" id="b6">
+          <span class="an">06</span><span class="ai-inf"><span class="ai-ttl">Suivi &amp; Ressources</span><span class="ai-sub">Ancrer les acquis et pérenniser la relation</span></span>
+          <span class="ai-dur">Clôture J2</span><svg class="achev" viewBox="0 0 24 24" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="ap" id="p6" role="region" aria-labelledby="b6"><div class="ap-in"><ul>
+          <li>Communication post-négociation et consolidation contractuelle</li>
+          <li>Suivi déontologique et gestion durable de la relation client</li>
+          <li>Ressources complémentaires et bibliographie</li>
+          <li>Évaluation à chaud et remise de l'attestation de formation</li>
+        </ul></div></div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- INFOS -->
+<section id="infos" class="sec sec-alt" aria-labelledby="h-infos">
+  <div class="wrap">
+    <p class="lbl">Organisation</p>
+    <h2 class="ttl" id="h-infos">Informations pratiques</h2>
+    <p class="sub">Tout ce qu'il faut savoir pour préparer votre participation.</p>
+    <div class="infos-grid rv">
+      <div class="iblk">
+        <div class="iblk-hd"><svg viewBox="0 0 24 24" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg><h3>Session &amp; organisation</h3></div>
+        <dl class="iblk-bd">
+          <div class="irow"><dt>Date</dt><dd>04 avril 2026</dd></div>
+          <div class="irow"><dt>Durée</dt><dd>2 jours · 14 heures</dd></div>
+          <div class="irow"><dt>Horaires</dt><dd>9h00 – 17h00</dd></div>
+          <div class="irow"><dt>Modalité</dt><dd>Présentiel + Microsoft Teams</dd></div>
+          <div class="irow"><dt>Groupe</dt><dd>6 à 12 participants</dd></div>
+          <div class="irow"><dt>Évaluation</dt><dd>Quiz + évaluation à chaud</dd></div>
+        </dl>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:1.2rem;">
+        <div class="iblk">
+          <div class="iblk-hd"><svg viewBox="0 0 24 24" stroke-width="2" aria-hidden="true"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg><h3>Public &amp; prérequis</h3></div>
+          <dl class="iblk-bd">
+            <div class="irow"><dt>Public</dt><dd>Commerciaux, managers, négociateurs</dd></div>
+            <div class="irow"><dt>Prérequis</dt><dd>Exp. commerciale recommandée</dd></div>
+            <div class="irow"><dt>Méthodes</dt><dd>Jeux de rôle · Cas pratiques · Serious game</dd></div>
+            <div class="irow"><dt>Financement</dt><dd>CPF · OPCO · Plan de formation</dd></div>
+          </dl>
+        </div>
+        <div class="iblk">
+          <div class="iblk-hd"><svg viewBox="0 0 24 24" stroke-width="2" aria-hidden="true"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><h3>Accessibilité</h3></div>
+          <div class="iblk-bd">
+            <p style="font-size:.83rem;color:var(--g500);margin-bottom:.9rem;">Adaptations possibles pour toute personne en situation de handicap. Contactez le référent avant inscription.</p>
+            <span class="badge badge-g">PMR &amp; DYS Friendly</span><br/><br/>
+            <span class="badge badge-b">Malvoyance prise en compte</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CARTE -->
+<section id="carte" class="sec" aria-labelledby="h-carte">
+  <div class="wrap">
+    <p class="lbl">Lieu de formation</p>
+    <h2 class="ttl" id="h-carte">Champs-Élysées, Paris</h2>
+    <p class="sub">Pour les sessions en présentiel. Sessions distancielles sur Microsoft Teams — lien de connexion envoyé 48h avant.</p>
+    <div class="map-box rv">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.242452773673!2d2.2987509!3d48.8736548!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66fc4b0c4ad35%3A0x9a87e9d0d1e9c3c!2sAv.%20des%20Champs-%C3%89lys%C3%A9es%2C%2075008%20Paris!5e0!3m2!1sfr!2sfr!4v1712000000000" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Carte – Avenue des Champs-Élysées, Paris 75008" aria-label="Carte Google Maps – Avenue des Champs-Élysées, Paris 75008"></iframe>
+      <div class="map-bar">
+        <svg viewBox="0 0 24 24" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <div><span>Avenue des Champs-Élysées, 75008 Paris</span><small>Métro ligne 1 — George V ou Franklin D. Roosevelt</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DOCS -->
+<section id="telechargements" class="sec sec-alt" aria-labelledby="h-dl">
+  <div class="wrap">
+    <p class="lbl">Documents</p>
+    <h2 class="ttl" id="h-dl">Téléchargements</h2>
+    <p class="sub">Le programme complet et le livret stagiaire à consulter avant votre arrivée.</p>
+    <div class="dl-grid rv">
+      <div class="dl-card">
+        <div class="dl-ico" aria-hidden="true"><svg viewBox="0 0 24 24" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg></div>
+        <h3>Programme de formation</h3>
+        <p>Détail des 6 modules, objectifs pédagogiques, modalités et évaluation. Format PDF.</p>
+        <a href="programme_formation_v2.pdf" class="dl-btn" download aria-label="Télécharger le programme de formation en PDF">
+          <svg viewBox="0 0 24 24" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Télécharger le PDF
+        </a>
+      </div>
+      <div class="dl-card">
+        <div class="dl-ico" aria-hidden="true"><svg viewBox="0 0 24 24" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg></div>
+        <h3>Livret stagiaire</h3>
+        <p>Votre guide personnel pour suivre et ancrer les apprentissages tout au long des 2 jours.</p>
+        <a href="Livret_Stagiaire_Negociation_Jeremy_Berger.docx" class="dl-btn" download aria-label="Télécharger le livret stagiaire">
+          <svg viewBox="0 0 24 24" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Télécharger le livret
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FORMATEUR -->
+<section id="formateur" class="sec" aria-labelledby="h-fmt">
+  <div class="wrap">
+    <p class="lbl">Votre intervenant</p>
+    <h2 class="ttl" id="h-fmt">Contactez le formateur</h2>
+    <p class="sub">Une question sur la formation, l'inscription ou les modalités de financement ?</p>
+    <div class="fmt-grid rv">
+      <img src="photo-formateur.jpg" alt="Portrait de Jérémy BERGER, formateur en négociation commerciale" class="fmt-photo" />
+      <div class="fmt-info">
+        <h3>Jérémy BERGER</h3>
+        <p class="fmt-role">Formateur certifié · Expert en Négociation Commerciale</p>
+        <div class="fmt-contacts">
+          <a href="mailto:jeremy.berger@hotmail.fr" class="cpill" aria-label="Envoyer un email à Jérémy BERGER">
+            <svg viewBox="0 0 24 24" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            jeremy.berger@hotmail.fr
+          </a>
+          <a href="tel:+33643933896" class="cpill" aria-label="Appeler Jérémy BERGER">
+            <svg viewBox="0 0 24 24" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.1 1.18 2 2 0 012.11 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            06 43 93 38 96
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-grid">
+    <div class="ft-brand">
+      <img src="logo-jeremy-berger.png" alt="Jérémy BERGER Formation" />
+      <address>Avenue des Champs-Élysées<br/>75008 Paris<br/><a href="mailto:jeremy.berger@hotmail.fr">jeremy.berger@hotmail.fr</a><br/><a href="tel:+33643933896">06 43 93 38 96</a></address>
+    </div>
+    <div>
+      <h4>Navigation</h4>
+      <p><a href="#apercu">Aperçu de la formation</a><br/><a href="#programme">Programme détaillé</a><br/><a href="#telechargements">Télécharger les documents</a><br/><a href="#infos">Infos pratiques</a><br/><a href="#carte">Lieu &amp; accès</a></p>
+    </div>
+    <div>
+      <h4>Accessibilité &amp; inclusion</h4>
+      <p><a href="#" aria-label="Politique d'inclusion">Politique d'inclusion →</a><br/><a href="#" aria-label="Gestion du handicap">Gestion du handicap →</a><br/><br/>Référent handicap :<br/><a href="mailto:jeremy.berger@hotmail.fr">jeremy.berger@hotmail.fr</a></p>
+    </div>
+  </div>
+  <div class="ft-bot">
+    <span>© 2026 – Jérémy BERGER Formation · Tous droits réservés</span>
+    <span>Déclaration d'activité enregistrée · N° à compléter</span>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('.ab').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const open = this.getAttribute('aria-expanded') === 'true';
+      document.querySelectorAll('.ab').forEach(b => {
+        b.setAttribute('aria-expanded', 'false');
+        document.getElementById(b.getAttribute('aria-controls')).classList.remove('open');
+      });
+      if (!open) {
+        this.setAttribute('aria-expanded', 'true');
+        document.getElementById(this.getAttribute('aria-controls')).classList.add('open');
+      }
+    });
+  });
+  document.querySelectorAll('section[id]').forEach(sec => {
+    new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          document.querySelectorAll('.snav a').forEach(l => l.classList.remove('act'));
+          const a = document.querySelector('.snav a[href="#' + e.target.id + '"]');
+          if (a) a.classList.add('act');
+        }
+      });
+    }, { threshold: 0.35 }).observe(sec);
+  });
+  const ro = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('vis'); ro.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.rv').forEach(el => ro.observe(el));
+</script>
+</body>
+</html>
